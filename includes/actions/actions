@@ -1,0 +1,29 @@
+<h1 id='actions'>Actions</h1>
+<blockquote>
+<p>The basic structure of an action</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">'human</span><span class="w"> </span><span class="err">readable'</span><span class="w"> </span><span class="err">version</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"myActionClass"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">configuration</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">'network</span><span class="w"> </span><span class="err">optimized'</span><span class="w"> </span><span class="err">version</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"#"</span><span class="p">:</span><span class="s2">"myActionClass"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">'#'</span><span class="w"> </span><span class="err">means</span><span class="w"> </span><span class="err">'type'</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">configuration</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The &quot;network optimized&quot; verion of this object would be:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>Our choice to abstract app code into JSON presented many chanllenges, the first was </p>
+
+<p><code>how do we perform actions with just JSON?</code></p>
+
+<p>Our solution was to create a new class.
+This &quot;action&quot; class would allow us to define actions as JSON objects.</p>

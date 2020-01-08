@@ -1,0 +1,47 @@
+<h2 id='go-to-page'>Go To Page</h2>
+<blockquote>
+<p>Go to the page with id: settingsPageId</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">'human</span><span class="w"> </span><span class="err">readable'</span><span class="w"> </span><span class="err">version</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"goToPage"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pageId"</span><span class="p">:</span><span class="s2">"settingsPageId"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">'network</span><span class="w"> </span><span class="err">optimized'</span><span class="w"> </span><span class="err">version</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"#"</span><span class="p">:</span><span class="s2">"g"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"i"</span><span class="p">:</span><span class="s2">"settingsPageId"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">PCActionGoToPage</span><span class="p">()</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">pageId</span> <span class="o">=</span> <span class="s">"settingsPageId"</span>
+<span class="n">alert</span><span class="o">.</span><span class="nf">execute</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+</code></pre><pre class="highlight kotlin tab-kotlin"><code><span class="c1">// TODO: Needs to be developed
+</span></code></pre>
+<p>Pushes a page onto the parent&#39;s navigation stack. </p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>short-hand</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageId</td>
+<td>i</td>
+<td>The id of the page to push</td>
+</tr>
+<tr>
+<td>animated</td>
+<td>a</td>
+<td>Whether to animate the transition</td>
+</tr>
+<tr>
+<td>replaceNavigationStack</td>
+<td>r</td>
+<td>When <code>true</code> the parents navigation stack is replaced with the target page embedded in a new naviation controller. Note: If the target page in a tab bar controller, then it is not embedded in a navigation controller but each tab receives it&#39;s own navigation stack</td>
+</tr>
+</tbody></table>
