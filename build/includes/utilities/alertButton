@@ -1,0 +1,46 @@
+<h2 id='alert-button'>Alert Button</h2>
+<blockquote>
+<p>Show an alert that says &quot;You Win!&quot; with an &quot;ok&quot; button</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">'human</span><span class="w"> </span><span class="err">readable'</span><span class="w"> </span><span class="err">version</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"cancel"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Any</span><span class="w"> </span><span class="err">desired</span><span class="w"> </span><span class="s2">"on-click"</span><span class="w"> </span><span class="err">Action</span><span class="w"> </span><span class="err">here</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">'network</span><span class="w"> </span><span class="err">optimized'</span><span class="w"> </span><span class="err">version</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"t"</span><span class="p">:</span><span class="s2">"cancel"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"a"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Any</span><span class="w"> </span><span class="err">desired</span><span class="w"> </span><span class="s2">"on-click"</span><span class="w"> </span><span class="err">Action</span><span class="w"> </span><span class="err">here</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">PCAlertButton</span><span class="p">();</span>
+<span class="n">button</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Close"</span>
+<span class="n">button</span><span class="o">.</span><span class="n">action</span> <span class="o">=</span> <span class="kt">PCActionNothing</span><span class="p">();</span> <span class="c1">// technically not needed</span>
+</code></pre><pre class="highlight kotlin tab-kotlin"><code><span class="c1">// TODO: Needs to be developed
+</span></code></pre>
+<p>This action displays a customizable pop-up alert to the user. </p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>short-hand</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>t</td>
+<td>The string to display on the button</td>
+</tr>
+<tr>
+<td>action</td>
+<td>a</td>
+<td>The action to perform when the button is clicked</td>
+</tr>
+</tbody></table>

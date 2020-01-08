@@ -1,0 +1,70 @@
+<h2 id='show-alert'>Show Alert</h2>
+<blockquote>
+<p>Show an alert that says &quot;You Win!&quot; with an &quot;ok&quot; button</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">'human</span><span class="w"> </span><span class="err">readable'</span><span class="w"> </span><span class="err">version</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"showAlert"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"You Win!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"a badge has been added to your collection"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"buttons"</span><span class="p">:[</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">'buttons'</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'alertButton'</span><span class="w"> </span><span class="err">objects</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">'network</span><span class="w"> </span><span class="err">optimized'</span><span class="w"> </span><span class="err">version</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"#"</span><span class="p">:</span><span class="s2">"a"</span><span class="p">,</span><span class="w">        </span><span class="err">//</span><span class="w"> </span><span class="err">'#'</span><span class="w"> </span><span class="err">means</span><span class="w"> </span><span class="err">'type'</span><span class="w">
+    </span><span class="s2">"t"</span><span class="p">:</span><span class="s2">"You Win!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"m"</span><span class="p">:</span><span class="s2">"a badge has been added to your collection"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"b"</span><span class="p">:[</span><span class="w">           </span><span class="err">//</span><span class="w"> </span><span class="err">'b'</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">'alertButton'</span><span class="w"> </span><span class="err">objects</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"t"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">PCActionShowAlert</span><span class="p">()</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Top"</span>
+<span class="n">alert</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s">"Bottom"</span>
+
+<span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">PCAlertButton</span><span class="p">();</span>
+<span class="n">button</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Close"</span>
+<span class="n">button</span><span class="o">.</span><span class="n">action</span> <span class="o">=</span> <span class="kt">PCActionNothing</span><span class="p">();</span> <span class="c1">// technically not needed</span>
+
+<span class="k">let</span> <span class="nv">button2</span> <span class="o">=</span> <span class="kt">PCAlertButton</span><span class="p">();</span>
+<span class="n">button2</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Again"</span>
+<span class="n">button2</span><span class="o">.</span><span class="n">action</span> <span class="o">=</span> <span class="n">alert</span> <span class="c1">// the original alert, to demonstrate the possibility of infinite loops</span>
+
+<span class="n">alert</span><span class="o">.</span><span class="n">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="n">button</span><span class="p">,</span><span class="n">button2</span><span class="p">]</span>
+<span class="n">alert</span><span class="o">.</span><span class="nf">execute</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+</code></pre><pre class="highlight kotlin tab-kotlin"><code><span class="c1">// TODO: Needs to be developed
+</span></code></pre>
+<p>This action displays a customizable pop-up alert to the user. </p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>short-hand</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>t</td>
+<td>The main message to display in the alert</td>
+</tr>
+<tr>
+<td>message</td>
+<td>m</td>
+<td>The smaller message to display in the alert</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td>b</td>
+<td>An array of <a href="#alert-button">Alert Button</a> objects</td>
+</tr>
+</tbody></table>
