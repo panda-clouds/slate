@@ -6,5 +6,8 @@ t=`which bundle`
 # Install dependencies if needed
 bundle install
 
+# Pre-open
+open http://localhost:4567
+
 # start the development server locally
 bundle exec middleman server
