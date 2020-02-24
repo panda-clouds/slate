@@ -14,6 +14,7 @@ includes:
   - actions/actions
   - actions/showAlert
   - actions/goToPage
+  - actions/sendSMS
   - utilities/utilities
   - utilities/alertButton
 
