@@ -23,7 +23,7 @@
     "a":
     {
         "#":"sendEmail",
-        "e":"open@email.com
+        "e":"open@email.com"
         
     }
 }
