@@ -17,6 +17,7 @@ includes:
   - actions/sendSMS
   - actions/openURL
   - actions/sendEmail
+  - actions/phoneCall
   - utilities/utilities
   - utilities/alertButton
 
